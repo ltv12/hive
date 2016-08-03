@@ -4,8 +4,8 @@ DROP TABLE cities;
 
 CREATE EXTERNAL TABLE cities
 (
-id int,
-name String
+    id INT,
+    name STRING
 )
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘,’
 map keys terminated by '\t' BY '"' LINES TERMINATED BY '\n';

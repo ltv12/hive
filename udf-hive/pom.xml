@@ -13,7 +13,6 @@
         <hadoop.version>2.7.1.2.4.0.0-169</hadoop.version>
         <scope>provided</scope>
         <hive.version>1.2.1</hive.version>
-
     </properties>
 
     <dependencies>

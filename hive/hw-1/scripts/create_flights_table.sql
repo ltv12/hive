@@ -1,8 +1,8 @@
 USE hive_hw;
 
-DROP TABLE flying;
+DROP TABLE flights;
 
-CREATE TABLE flying
+CREATE TABLE flights
 (
 Year int, 
 Month int, 
@@ -42,9 +42,7 @@ WITH SERDEPROPERTIES (
 STORED AS TEXTFILE
 TBLPROPERTIES('skip.header.line.count'='1');
 
-LOAD DATA inpath '/hw/hive/2007.csv' overwrite INTO TABLE flying;
+LOAD DATA inpath '/hw/hive/2007.csv' overwrite INTO TABLE flights;
 
+SELECT * FROM flights;
 
-SELECT * FROM flying;
-
-ALTER TABLE hive_hw.flying RENAME TO hive_hw.flights;

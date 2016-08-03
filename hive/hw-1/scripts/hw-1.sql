@@ -1,13 +1,13 @@
 
 -- Count total number of flights per carrier in 2007
 SELECT COUNT(*) total_flights, f.uniquecarrier  carrier
-FROM flying f
+FROM flights f
 GROUP BY f.uniquecarrier
 SORT BY total_flights;
 
 
 -- The total number of flights served in Jun 2007 by NYC (all airports, use join with Airports data).
-SELECT COUNT(*) total_flights FROM flying f
+SELECT COUNT(*) total_flights FROM flights f
     airports airports  
 WHERE  (f.origin = airports.iata or f.dest = airports.iata)
     AND f.month = 6
