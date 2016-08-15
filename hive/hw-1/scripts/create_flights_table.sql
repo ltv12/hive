@@ -1,45 +1,39 @@
-USE hive_hw;
-
-DROP TABLE flights;
+USE HW_4;
 
 CREATE TABLE flights
-(
-Year int, 
-Month int, 
-DayofMonth int,
-DayOfWeek int,
-DepTime int,
-CRSDepTime	int, 
-ArrTime int,
-CRSArrTime int,
-UniqueCarrier String,
-FlightNum int,
-TailNum String,
-ActualElapsedTime int,
-CRSElapsedTime int,
-AirTime int,
-ArrDelay int,
-DepDelay int,
-Origin String,
-Dest String,
-Distance int,
-TaxiIn int,
-TaxiOut int, 
-Cancelled int,
-CancellationCode String,
-Diverted int,
-CarrierDelay int,
-WeatherDelay int,
-NASDelay int,
-SecurityDelay int,
-LateAircraftDelay int 
-)
-ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
-WITH SERDEPROPERTIES (
-   "separatorChar" = "\,",
-   "quoteChar"     = "\""
-)
-STORED AS TEXTFILE
+  (
+     year              SMALLINT,
+     month             SMALLINT,
+     dayofmonth        SMALLINT,
+     dayofweek         SMALLINT,
+     deptime           STRING,
+     crsdeptime        STRING,
+     arrtime           STRING,
+     crsarrtime        STRING,
+     uniquecarrier     STRING,
+     flightnum         STRING,
+     tailnum           STRING,
+     actualelapsedtime STRING,
+     crselapsedtime    STRING,
+     airtime           STRING,
+     arrdelay          STRING,
+     depdelay          STRING,
+     origin            STRING,
+     dest              STRING,
+     distance          STRING,
+     taxiin            STRING,
+     taxiout           STRING,
+     cancelled         SMALLINT,
+     cancellationcode  STRING,
+     diverted          STRING,
+     carrierdelay      STRING,
+     weatherdelay      STRING,
+     nasdelay          STRING,
+     securitydelay     STRING,
+     lateaircraftdelay STRING
+  )
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
 TBLPROPERTIES('skip.header.line.count'='1');
 
 LOAD DATA inpath '/hw/hive/2007.csv' overwrite INTO TABLE flights;

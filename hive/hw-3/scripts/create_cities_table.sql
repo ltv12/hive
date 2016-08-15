@@ -8,7 +8,7 @@ CREATE EXTERNAL TABLE cities
     name STRING
 )
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ‘,’
-map keys terminated by '\t' BY '"' LINES TERMINATED BY '\n';
+LINES TERMINATED BY '\n';
 LOAD DATA inpath '/hw/hw-4/city.en.txt' overwrite INTO TABLE cities;
 
 SELECT * FROM cities;

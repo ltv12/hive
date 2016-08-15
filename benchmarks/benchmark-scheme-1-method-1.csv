@@ -1,0 +1,3 @@
+Benchmark,Mode,Threads,Samples,Score,Score Error (99.9%),Unit,Param: engine,Param: vectorisation
+com.hd.ki.Start.query1,avgt,1,5,60.312949,3.155097,s/op,mr,FALSE
+com.hd.ki.Start.query1,avgt,1,5,12.272877,7.442874,s/op,tez,FALSE

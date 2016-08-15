@@ -1,12 +1,12 @@
-USE hive_hw;
+USE HW_4;
 
 DROP TABLE carriers;
 
 CREATE TABLE IF NOT EXISTS carriers
-(
-Code String,
-Description String
-)
+  (
+     code        STRING,
+     description STRING
+  )
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 WITH SERDEPROPERTIES (
    "separatorChar" = "\,",

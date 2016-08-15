@@ -1,19 +1,23 @@
-USE hive_hw;
+USE HW_4;
 
 CREATE TABLE IF NOT EXISTS airports
-(
-iata String,
-airport String,
-city String,
-state String,
-country String,
-lat String,	long String
-
+  (
+     iata    STRING,
+     airport STRING,
+     city    STRING,
+     state   STRING,
+     country STRING,
+     lat     STRING,
+     long    STRING
+  )
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+   "separatorChar" = "\,",
+   "quoteChar"     = "\""
 )
-ROW FORMAT DELIMITED FIELDS
-TERMINATED BY ',' STORED AS TEXTFILE
-TBLPROPERTIES('skip.header.line.count'='1');
+STORED AS TEXTFILE
+tblproperties("skip.header.line.count"="1");
 
-LOAD DATA inpath '/hw/hive/2007.csv' overwrite INTO TABLE airports;
+LOAD DATA inpath '/hw/hive/airports.csv' overwrite INTO TABLE airports;
 
 

@@ -1,0 +1,3 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: engine"
+"com.hd.ki.Start.query2","avgt",1,5,26.654769,2.051796,"s/op",mr
+"com.hd.ki.Start.query2","avgt",1,5,5.236440,6.926404,"s/op",tez

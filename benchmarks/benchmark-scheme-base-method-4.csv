@@ -1,0 +1,3 @@
+Benchmark,Mode,Threads,Samples,Score,Score Error (99.9%),Unit,Param: engine
+com.hd.ki.Start.query4,avgt,1,5,80.100322,NaN,s/op,mr
+com.hd.ki.Start.query4,avgt,1,5,12.805672,NaN,s/op,tez
